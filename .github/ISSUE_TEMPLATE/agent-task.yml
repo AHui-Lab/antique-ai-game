@@ -1,0 +1,91 @@
+name: Agent Task
+description: Structured implementation task suitable for human or autonomous coding-agent execution.
+title: "TASK-XXX: "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for a single independently verifiable implementation task.
+
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: What single outcome must this task produce?
+      placeholder: Implement the stable EntityId foundation.
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Why
+      description: Why is this task needed now?
+    validations:
+      required: true
+
+  - type: textarea
+    id: allowed_paths
+    attributes:
+      label: Allowed paths
+      description: Repository paths the agent may modify. One pattern per line.
+      placeholder: |
+        game/core/id/**
+        tests/core/id/**
+    validations:
+      required: true
+
+  - type: textarea
+    id: forbidden_paths
+    attributes:
+      label: Forbidden paths
+      description: Paths that must not be modified. One pattern per line.
+      placeholder: |
+        .github/**
+        docs/architecture/**
+    validations:
+      required: true
+
+  - type: textarea
+    id: requirements
+    attributes:
+      label: Requirements
+      description: Functional and technical requirements.
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Observable conditions that must be true for the task to be considered complete.
+    validations:
+      required: true
+
+  - type: textarea
+    id: tests
+    attributes:
+      label: Required tests
+      description: Commands or test suites that must pass.
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies
+      description: Issues, contracts, tools, or decisions this task depends on. Use "None" if there are none.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: documentation
+    attributes:
+      label: Documentation impact
+      options:
+        - None
+        - Update existing documentation
+        - Architecture decision required
+    validations:
+      required: true
